@@ -1,14 +1,13 @@
 ---
-title: "Data Wrangling Project"
+title: "Random Forest Project"
 date: 2019-03-08
-tags: [data wrangling, data science, messy data]
+tags: [Create new R package on Weighted Random Forest]
 header:
-  image: "/images/perceptron/percept.jpg"
-excerpt: "Data Wrangling, Data Science, Messy Data"
+excerpt: "Create new R package on Weighted Random Forest"
 mathjax: "true"
 ---
 
-# H1 Heading
+# 
 
 ## H2 Heading
 
