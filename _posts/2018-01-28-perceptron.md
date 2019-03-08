@@ -10,8 +10,8 @@ mathjax: "true"
 
 ## Immport Datasets Wrangling
 [github link](https://github.com/yxiao69/immport/wiki)
-[logo]:/Users/xiaoyi/Documents/GitHub/yxiao69.github.io/images/hiconet.png
-Above is the Immport website, we are aiming to test hiconet software on antibody, gene expression and fcas datasets.
+![logo]:/Users/xiaoyi/Documents/GitHub/yxiao69.github.io/images/hiconet.png
+
 **Hieracrchical Community Network**(hiconet) is software for integration of multiple data types collected from a common group of subjects. We aim to construct data structure that can be applied in hiconnet, which will serve as reference for user.
 
 ### Data structure
@@ -38,7 +38,8 @@ Community: a group of features within a society that share a similar pattern.
 
 ### Process
 1. Connect to ImmPort using ImmuneSpaceR
-```r
+
+```{r}
 names <- c("SDY80","SDY180","SDY212","SDY269","SDY312")
 flist <- list()
 
@@ -48,6 +49,7 @@ for (ii in 1:length(names)) {
 }
 ```
 2. Write out the input files
+
 ```{r}
 mainDir <- "~/Downloads"
 subDir <- out
@@ -68,6 +70,7 @@ for (ii in 1:length(flist)) {
   }
 }
 ```
+
 3. Generate data matrix (this is example of fcs_analyzed_result)
 Data matrix files  summarize the population_cell_number(col2) in terms of the observation_ID and population_definition_reported(col1).
 The col1 is columns we group by which differs at different datasets (including fcs,hai,elisa,elispot,gene,etc). the col2 is the column we wish to summarize, which differs too.
