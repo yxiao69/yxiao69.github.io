@@ -9,8 +9,8 @@ mathjax: "true"
 ---
 
 ## Immport Datasets Wrangling
-[github link](https://github.com/yxiao69/immport/wiki)
-![alt text]:(/images/hiconet.png)
+[GitHub](https://github.com/yxiao69/immport/wiki)
+
 
 **Hieracrchical Community Network**(hiconet) is software for integration of multiple data types collected from a common group of subjects. We aim to construct data structure that can be applied in hiconnet, which will serve as reference for user.
 
@@ -23,18 +23,22 @@ A DataSet should have at least one Society of data
 at least one of each DataMatrix, FeatureAnnotation, ObservationAnnotation
 
 **Data Matrix**: a data matrix of continuous values that represent a biological state or concentration, of the same data type.
+
     This can include different time points or treatments.
+
     This is the unit community detection is based on.
 
-**Observation Annotation**: meta data on samples. This may include TimePoints and Treatments, often in biosample table from ImmPort DB
+**Observation Annotation**: meta data on samples.
+
+This may include TimePoints and Treatments, often in biosample table from ImmPort DB
+
 **Feature Annotation**: meta data on features
 
 **Key annotation variables**: time point and treatment.
-TimePoint:
-Treatment:
 
 **Graph**: a graph/network for relationships in the data (e.g. used in loom format, loompy.org).
-Community: a group of features within a society that share a similar pattern.
+
+**Community**: a group of features within a society that share a similar pattern.
 
 ### Process
 1. Connect to ImmPort using ImmuneSpaceR
@@ -72,8 +76,12 @@ for (ii in 1:length(flist)) {
 ```
 
 3. Generate data matrix (this is example of fcs_analyzed_result)
+
 Data matrix files  summarize the population_cell_number(col2) in terms of the observation_ID and population_definition_reported(col1).
-The col1 is columns we group by which differs at different datasets (including fcs,hai,elisa,elispot,gene,etc). the col2 is the column we wish to summarize, which differs too.
+
+The col1 is columns we group by which differs at different datasets (including fcs,hai,elisa,elispot,gene,etc).
+
+the col2 is the column we wish to summarize, which differs too.
 
 ```r
 setwd(file.path(mainDir, subDir))
@@ -101,7 +109,9 @@ for (ii in 1:length(files)) {
 ```
 
 4. Generate the Annotation file
-We limit the number of columns we need here. We then remove any duplicates since this is simply an annotation file. No data summarization is required for this step.
+
+
+We limit the number of columns we need here. Then remove any duplicates since this is simply an annotation file. No data summarization is required for this step.
 
 ```r
 
