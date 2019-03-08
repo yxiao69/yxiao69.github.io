@@ -24,9 +24,9 @@ at least one of each DataMatrix, FeatureAnnotation, ObservationAnnotation
 
 **Data Matrix**: a data matrix of continuous values that represent a biological state or concentration, of the same data type.
 
-    This can include different time points or treatments.
+This can include different time points or treatments.
 
-    This is the unit community detection is based on.
+This is the unit community detection is based on.
 
 **Observation Annotation**: meta data on samples.
 
@@ -75,11 +75,9 @@ for (ii in 1:length(flist)) {
 }
 ```
 
-3. Generate data matrix (this is example of fcs_analyzed_result)
+3. Generate data matrix
 
-Data matrix files  summarize the population_cell_number(col2) in terms of the observation_ID and population_definition_reported(col1).
-
-The col1 is columns we group by which differs at different datasets (including fcs,hai,elisa,elispot,gene,etc).
+The col1 is columns we group by which differs at different datasets
 
 the col2 is the column we wish to summarize, which differs too.
 
@@ -110,9 +108,9 @@ for (ii in 1:length(files)) {
 
 4. Generate the Annotation file
 
+limit the number of columns we need here.
 
-We limit the number of columns we need here. Then remove any duplicates since this is simply an annotation file. No data summarization is required for this step.
-
+remove any duplicates since this is simply an annotation file.
 ```r
 
 setwd(file.path(mainDir, subDir))
