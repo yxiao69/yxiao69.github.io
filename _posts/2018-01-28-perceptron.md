@@ -10,36 +10,36 @@ mathjax: "true"
 
 ## Immport Datasets Wrangling
 [github link](https://github.com/yxiao69/immport/wiki)
-![logo]:/Users/xiaoyi/Documents/GitHub/yxiao69.github.io/images/hiconet.png
+![alt text]:(/images/hiconet.png)
 
 **Hieracrchical Community Network**(hiconet) is software for integration of multiple data types collected from a common group of subjects. We aim to construct data structure that can be applied in hiconnet, which will serve as reference for user.
 
 ### Data structure
-Project: a collection of data of one or more types. For multiple data types, common samples/subjects are expected.This is the unit HiCoNet works on -HiCoNet integrates DataMatrices within a DataSet
+**Project**: a collection of data of one or more types. For multiple data types, common samples/subjects are expected.This is the unit HiCoNet works on -HiCoNet integrates DataMatrices within a DataSet
 A DataSet should have at least one Society of data
 
 
-Society: one data type
+**Society**: one data type
 at least one of each DataMatrix, FeatureAnnotation, ObservationAnnotation
 
-DataMatrix: a data matrix of continuous values that represent a biological state or concentration, of the same data type.
+**Data Matrix**: a data matrix of continuous values that represent a biological state or concentration, of the same data type.
     This can include different time points or treatments.
     This is the unit community detection is based on.
 
-ObservationAnnotation: meta data on samples. This may include TimePoints and Treatments, often in biosample table from ImmPort DB
-FeatureAnnotation: meta data on features
+**Observation Annotation**: meta data on samples. This may include TimePoints and Treatments, often in biosample table from ImmPort DB
+**Feature Annotation**: meta data on features
 
-Key annotation variables: time point and treatment.
+**Key annotation variables**: time point and treatment.
 TimePoint:
 Treatment:
 
-Graph: a graph/network for relationships in the data (e.g. used in loom format, loompy.org).
+**Graph**: a graph/network for relationships in the data (e.g. used in loom format, loompy.org).
 Community: a group of features within a society that share a similar pattern.
 
 ### Process
 1. Connect to ImmPort using ImmuneSpaceR
 
-```{r}
+```r
 names <- c("SDY80","SDY180","SDY212","SDY269","SDY312")
 flist <- list()
 
@@ -50,7 +50,7 @@ for (ii in 1:length(names)) {
 ```
 2. Write out the input files
 
-```{r}
+```r
 mainDir <- "~/Downloads"
 subDir <- out
 
@@ -75,7 +75,7 @@ for (ii in 1:length(flist)) {
 Data matrix files  summarize the population_cell_number(col2) in terms of the observation_ID and population_definition_reported(col1).
 The col1 is columns we group by which differs at different datasets (including fcs,hai,elisa,elispot,gene,etc). the col2 is the column we wish to summarize, which differs too.
 
-```{r}
+```r
 setwd(file.path(mainDir, subDir))
 
 files <- list.files(pattern=paste0("*",key,"*"))
@@ -103,7 +103,7 @@ for (ii in 1:length(files)) {
 4. Generate the Annotation file
 We limit the number of columns we need here. We then remove any duplicates since this is simply an annotation file. No data summarization is required for this step.
 
-```{r}
+```r
 
 setwd(file.path(mainDir, subDir))
 files <- list.files(pattern=paste0("*",key,"*"))
@@ -112,10 +112,6 @@ for (ii in 1:length(files)) {
   fcs <- read_tsv(files[ii])
   ids <- sapply(strsplit(fcs$`participant_id`,"\\."),`[`,1)
   observation_ID <- gsub(" ","",paste(ids,format(fcs$`study_time_collected`,nsmall=1),sep="_"))
-
-# All we need is the first 10 columns from the data frame
-
-
 
    fcs.tmp <- cbind(observation_ID,fcs)
    fcs.tmp$observation_ID <- as.character(fcs.tmp$observation_ID)
