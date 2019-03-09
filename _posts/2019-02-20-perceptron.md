@@ -1,6 +1,6 @@
 ---
 title: "Data Wrangling Project"
-date: 2018-01-28
+date: 2019-02-20
 tags: [data wrangling, data science, messy data]
 header:
   image: "/images/hiconet.png"
@@ -15,8 +15,9 @@ mathjax: "true"
 **Hieracrchical Community Network**(hiconet) is software for integration of multiple data types collected from a common group of subjects. We aim to construct data structure that can be applied in hiconnet, which will serve as reference for user.
 
 ### Data structure
-**Project**: a collection of data of one or more types. For multiple data types, common samples/subjects are expected.This is the unit HiCoNet works on -HiCoNet integrates DataMatrices within a DataSet
-A DataSet should have at least one Society of data
+**Project**: a collection of data of one or more types.
+
+For multiple data types, common samples/subjects are expected.This is the unit HiCoNet works on. HiCoNet integrates DataMatrices within a DataSet.A DataSet should have at least one Society of data
 
 
 **Society**: one data type
