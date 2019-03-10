@@ -3,60 +3,25 @@ title: "Random Forest Project"
 date: 2019-03-08
 tags: [Create new R package on Weighted Random Forest]
 header:
+  image: "/images/machine/percept.jpg"
 excerpt: "Create new R package on Weighted Random Forest"
 mathjax: "true"
 ---
 
-# 
+# Design weighted random forest
+Manipulate random forest at tree level using importance score and
+multi-match info for each feature
 
-## H2 Heading
+For each tree  $j=1,…,ntree$,compute weight as $w_j$
 
-### H3 Heading
+For each subject $i=1,…,N$,compute prediction as $v_i$  based on OBB prediction  $v_{ij}$  
 
-Here's some basic text.
+$$v_i=\frac{\sum_{j=1}^{ntree} w_j*v_{ij}}{\sum_{j=1}^{ntree} w_j}$$
 
-And here's some *italics*
+# Manipulate info at tree level
+Extract sample prediction at each tree;
 
-Here's some **bold** text.
+Get the feature usage (appears in how many nodes) info at each tree
 
-What about a [link](https://github.com/dataoptimal)?
-
-Here's a bulleted list:
-* First item
-+ Second item
-- Third item
-
-Here's a numbered list:
-1. First
-2. Second
-3. Third
-
-Python code block:
-```python
-    import numpy as np
-
-    def test_function(x, y):
-      z = np.sum(x,y)
-      return z
-```
-
-R code block:
-```r
-library(tidyverse)
-df <- read_csv("some_file.csv")
-head(df)
-```
-
-Here's some inline code `x+y`.
-
-Here's an image:
-<img src="{{ site.url }}{{ site.baseurl }}/images/perceptron/linsep.jpg" alt="linearly separable data">
-
-Here's another image using Kramdown:
-![alt]({{ site.url }}{{ site.baseurl }}/images/perceptron/linsep.jpg)
-
-Here's some math:
-
-$$z=x+y$$
-
-You can also put it inline $$z=x+y$$
+![alt]({{ site.url }}{{ site.baseurl }}/images/machine/p2.jpg)
+![alt]({{ site.url }}{{ site.baseurl }}/images/machine/p3.jpg)
