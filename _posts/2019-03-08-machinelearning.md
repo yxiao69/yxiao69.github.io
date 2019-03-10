@@ -23,5 +23,8 @@ Extract sample prediction at each tree;
 
 Get the feature usage (appears in how many nodes) info at each tree
 
-![alt]({{ site.url }}{{ site.baseurl }}/images/machine/p2.pdf)
-![alt]({{ site.url }}{{ site.baseurl }}/images/machine/p3.pdf)
+h
+![alt]({{ site.url }}{{ site.baseurl }}/images/machine/p2.jpg)
+![alt]({{ site.url }}{{ site.baseurl }}/images/machine/p3.jpg)
+
+![Semantic description of image](/images/machine/p2.jpg "Image Title")
