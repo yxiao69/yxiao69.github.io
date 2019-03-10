@@ -21,10 +21,9 @@ $$v_i=\frac{\sum_{j=1}^{ntree} w_j*v_{ij}}{\sum_{j=1}^{ntree} w_j}$$
 ### Manipulate info at tree level
 Extract sample prediction at each tree;
 
-Get the feature usage (appears in how many nodes) info at each tree
+Get the feature usage info at each tree
 
-h
-![alt]({{ site.url }}{{ site.baseurl }}/images/machine/p2.jpg)
-![alt]({{ site.url }}{{ site.baseurl }}/images/machine/p3.jpg)
+![alt](/images/machine/p2.jpg)*figure 1*
+![alt](/images/machine/p3.jpg)*figure 2*
 
-![Semantic description of image](/images/machine/p2.jpg "Image Title")
+![alt](/images/machine/tree_detailcheck.gif)*figure 1*
