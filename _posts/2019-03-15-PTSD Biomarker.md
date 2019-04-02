@@ -1,7 +1,12 @@
-Plasma Analysis on PTSD Project
-================
-YI XIAO
-1/17/2019
+---
+title: "PTSD biomarker Project"
+date: 2019-02-20
+tags: [clinical trial, data science, messy data]
+header:
+  image: "/images/hiconet.png"
+excerpt: "investigate the  Vagal Nerve Stimulation on the levels of stress-related biomarkers in PTSD and healthy subjects"
+mathjax: "true"
+---
 
 ``` r
 plasma=read.csv('/Users/xiaoyi/Documents/2018Fall/Clinical/PTSD/plasma.csv',na.strings=c("","NA"))
